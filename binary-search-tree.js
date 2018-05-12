@@ -236,41 +236,24 @@ class BinarySearchTree {
     if (this.root === null) {
       return false;
     }
-    let stats = {
-      count: 0,
-      sum: 0
-    };
-    
-    this._doesTreeContainAverage(this.root, stats);
-    console.log('stats', stats);
-    return stats;
+    let nodes = this.numNodes();
+    let sum = this._doesTreeContainAverageSum(this.root);
+    let average = sum / nodes;
+    return this.contains(average);
     // step 1: go through tree to determine average value.
     // step 2: go through tree again to see if it has that value.
     // step 3: return result
   }
 
-  _doesTreeContainAverage(node, stats) {
-    let newStats = Object.assign({}, stats);
-    if (!node) {
-      return stats;
-    }
+  _doesTreeContainAverageSum(node) {
+    let sum = node.value;
     if (node.left) {
-      let tempStats = {
-        count: newStats.count++,
-        value: node.left.value
-      };
-      newStats = Object.assign({}, newStats, tempStats);
-      this._doesTreeContainAverage(node.left, newStats);
+      sum += this._doesTreeContainAverageSum(node.left);
     }
     if (node.right) {
-      let tempStats = {
-        count: newStats.count++,
-        value: node.right.value
-      };
-      newStats = Object.assign({}, newStats, tempStats);
-      this._doesTreeContainAverage(node.left, newStats);
+      sum += this._doesTreeContainAverageSum(node.right);
     }
-    return newStats;
+    return sum;
   }
 }
 module.exports = {

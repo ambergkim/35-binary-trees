@@ -134,7 +134,7 @@ describe('Binary Search Tree', () => {
       expect(tree.doesTreeContainAverage()).toBe(true);
     });
 
-    test.skip('tree does not contain average', () => {
+    test('tree does not contain average', () => {
       let tree = new BinarySearchTree();
       tree.add(1);
       tree.add(2);
