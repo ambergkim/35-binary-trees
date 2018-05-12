@@ -1,12 +1,20 @@
 {
   "name": "14-binary-tree-problems",
   "version": "1.0.0",
-  "description": "",
+  "description": "Implement all of the following methods for this BinarySearchTree class. Remember, a BinarySearchTree stores nodes according to their values. Lesser values are stored toward the left of each node, greater values are stored to the right.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambergkim/35-binary-trees.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ambergkim/35-binary-trees/issues"
+  },
+  "homepage": "https://github.com/ambergkim/35-binary-trees#readme"
 }
